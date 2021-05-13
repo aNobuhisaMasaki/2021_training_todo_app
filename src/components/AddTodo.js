@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
+import { VISIBILITY_FILTERS, words } from "../constants";
 
 class AddTodo extends React.Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class AddTodo extends React.Component {
           value={this.state.input}
         />
         <button className="add-todo" onClick={this.handleAddTodo}>
-          Add Todo
+          {words.ADD_TODO}
         </button>
       </div>
     );

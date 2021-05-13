@@ -2,7 +2,7 @@ import React from "react";
 import cx from "classnames";
 import { connect } from "react-redux";
 import { setFilter } from "../redux/actions";
-import { VISIBILITY_FILTERS } from "../constants";
+import { VISIBILITY_FILTERS, words } from "../constants";
 
 const VisibilityFilters = ({ activeFilter, setFilter }) => {
   return (
@@ -20,7 +20,7 @@ const VisibilityFilters = ({ activeFilter, setFilter }) => {
               setFilter(currentFilter);
             }}
           >
-            {currentFilter}
+            {words.VISIBILITY_FILTERS[filterKey]}
           </span>
         );
       })}

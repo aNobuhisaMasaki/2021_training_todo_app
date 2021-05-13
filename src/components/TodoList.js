@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import Todo from "./Todo";
 // import { getTodos } from "../redux/selectors";
 import { getTodosByVisibilityFilter } from "../redux/selectors";
-import { VISIBILITY_FILTERS } from "../constants";
+import { VISIBILITY_FILTERS, words } from "../constants";
 
 const TodoList = ({ todos }) => (
   <ul className="todo-list">
@@ -11,7 +11,7 @@ const TodoList = ({ todos }) => (
       ? todos.map((todo, index) => {
           return <Todo key={`todo-${todo.id}`} todo={todo} />;
         })
-      : "No todos, yay!"}
+      : words.NO_TODO_LEFT}
   </ul>
 );
 
