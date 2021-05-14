@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { addTodo } from "../redux/actions";
-import { VISIBILITY_FILTERS, words } from "../constants";
+import { words } from "../constants";
 
 class AddTodo extends React.Component {
   constructor(props) {
