@@ -6,6 +6,7 @@ export const VISIBILITY_FILTERS = {
 
 export const words = {
   TODO_LIST_TITLE: "TODOリスト",
+  IMPORT_TODO: "インポート",
   ADD_TODO: "追加",
   NO_TODO_LEFT: "TODOはありません！",
   VISIBILITY_FILTERS: {
