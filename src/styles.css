@@ -2,6 +2,11 @@
   font-family: sans-serif;
 }
 
+/** import todo **/
+.import-todo {
+  margin-left: 0.5rem;
+}
+
 /** add todo **/
 .add-todo {
   margin-left: 0.5rem;
