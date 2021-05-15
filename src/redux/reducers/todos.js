@@ -1,4 +1,4 @@
-import { ADD_TODO, TOGGLE_TODO } from "../actionTypes";
+import { ADD_TODO, TOGGLE_TODO, DELETE_TODO } from "../actionTypes";
 
 export default function(state = [], action) {
   switch (action.type) {
@@ -21,6 +21,14 @@ export default function(state = [], action) {
         ? { ...todo, id: existingId, completed: !completed }
         : { ...todo, id: existingId, completed }
       ));
+    }
+    case DELETE_TODO: {
+      const { id } = action.payload;
+      return {
+        ...state,
+        allIds: state.allIds.filter(existingId => existingId !== id),
+        byIds: Object.fromEntries(Object.entries(state.byIds).filter(([existingId, todo]) => existingId !== id)),
+      };
     }
     default:
       return state;

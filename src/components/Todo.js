@@ -1,10 +1,11 @@
 import React from "react";
 import { connect } from "react-redux";
 import cx from "classnames";
-import { toggleTodo } from "../redux/actions";
+import { toggleTodo, deleteTodo } from "../redux/actions";
 
-const Todo = ({ todo, toggleTodo }) => (
+const Todo = ({ todo, toggleTodo, deleteTodo }) => (
   <li className="todo-item">
+    <span onClick={() => deleteTodo(todo.id)}>❎</span>
     <span
       className={cx(
         "todo-item__text",
@@ -22,5 +23,5 @@ const Todo = ({ todo, toggleTodo }) => (
 // export default Todo;
 export default connect(
   null,
-  { toggleTodo }
+  { toggleTodo, deleteTodo }
 )(Todo);
