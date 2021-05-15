@@ -4,16 +4,18 @@ import cx from "classnames";
 import { toggleTodo } from "../redux/actions";
 
 const Todo = ({ todo, toggleTodo }) => (
-  <li className="todo-item" onClick={() => toggleTodo(todo.id)}>
-    {todo && todo.completed ? "✅" : "🔴"}{" "}
+  <li className="todo-item">
     <span
       className={cx(
         "todo-item__text",
         todo && todo.completed && "todo-item__text--completed"
       )}
+      onClick={() => toggleTodo(todo.id)}
     >
-      {todo.content}
+      {todo && todo.completed ? "✅" : "🔴"}{" "}
+      {todo.text}
     </span>
+    {todo.link ? (<a href={todo.link} target="_blank">{todo.link}</a>) : null}
   </li>
 );
 
