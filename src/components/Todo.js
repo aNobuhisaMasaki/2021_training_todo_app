@@ -5,16 +5,15 @@ import { toggleTodo, deleteTodo } from "../redux/actions";
 
 const Todo = ({ todo, toggleTodo, deleteTodo }) => (
   <li className="todo-item">
-    <span onClick={() => deleteTodo(todo.id)}>❎</span>
+    <span onClick={() => deleteTodo(todo.id)}>{"❎"}{" "}</span>
     <span
-      className={cx(
-        "todo-item__text",
-        todo && todo.completed && "todo-item__text--completed"
-      )}
+      className="todo-item__text"
       onClick={() => toggleTodo(todo.id)}
     >
       {todo && todo.completed ? "✅" : "🔴"}{" "}
-      {todo.text}
+      <span className={cx(todo && todo.completed && "todo-item__text--completed")}>
+        {todo.text}
+      </span>
     </span>
     {todo.link ? (<a href={todo.link} target="_blank">{todo.link}</a>) : null}
   </li>
