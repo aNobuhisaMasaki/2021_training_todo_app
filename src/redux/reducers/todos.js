@@ -24,7 +24,7 @@ export default function(state = [], action) {
     }
     case DELETE_TODO: {
       const { id } = action.payload;
-      return state.filter(({ id: existingId }) => existingId !== id),
+      return state.filter(({ id: existingId }) => existingId !== id)
     }
     default:
       return state;
